@@ -1,0 +1,131 @@
+.dancing-cat-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+  perspective: 1000px;
+}
+
+.dancing-cat {
+  width: 200px;
+  height: 240px;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+}
+
+.dancing-cat.dancing {
+  animation: danceSequence var(--animation-duration, 2s) ease-in-out infinite;
+}
+
+.dancing-cat.stopped {
+  animation: none;
+  transform: translateY(0) rotateZ(0deg) scale(1);
+}
+
+@keyframes danceSequence {
+  /* 춤 기본 동작 */
+  0% {
+    transform: translateY(0) rotateZ(0deg) scale(1);
+  }
+
+  /* 좌측 흔들기 */
+  10% {
+    transform: translateY(-10px) rotateZ(-8deg) scale(1);
+  }
+
+  15% {
+    transform: translateY(-5px) rotateZ(-12deg) scale(1.02);
+  }
+
+  /* 우측 흔들기 */
+  20% {
+    transform: translateY(0) rotateZ(0deg) scale(1);
+  }
+
+  25% {
+    transform: translateY(-10px) rotateZ(8deg) scale(1);
+  }
+
+  30% {
+    transform: translateY(-5px) rotateZ(12deg) scale(1.02);
+  }
+
+  /* 중간 위치 */
+  35% {
+    transform: translateY(0) rotateZ(0deg) scale(1);
+  }
+
+  /* 점프 동작 */
+  40% {
+    transform: translateY(-30px) rotateZ(-5deg) scale(1);
+  }
+
+  45% {
+    transform: translateY(-50px) rotateZ(0deg) scale(0.95);
+  }
+
+  50% {
+    transform: translateY(-30px) rotateZ(5deg) scale(1);
+  }
+
+  55% {
+    transform: translateY(0) rotateZ(0deg) scale(1);
+  }
+
+  /* 회전 동작 */
+  60% {
+    transform: translateY(0) rotateZ(15deg) scale(1);
+  }
+
+  65% {
+    transform: translateY(-5px) rotateZ(45deg) scale(1.05);
+  }
+
+  70% {
+    transform: translateY(0) rotateZ(90deg) scale(1);
+  }
+
+  75% {
+    transform: translateY(-5px) rotateZ(135deg) scale(1.05);
+  }
+
+  80% {
+    transform: translateY(0) rotateZ(180deg) scale(1);
+  }
+
+  85% {
+    transform: translateY(-5px) rotateZ(270deg) scale(1.05);
+  }
+
+  90% {
+    transform: translateY(0) rotateZ(360deg) scale(1);
+  }
+
+  /* 마무리 */
+  100% {
+    transform: translateY(0) rotateZ(0deg) scale(1);
+  }
+}
+
+/* 반응형: 모바일 */
+@media (max-width: 768px) {
+  .dancing-cat {
+    width: 150px;
+    height: 180px;
+  }
+
+  .dancing-cat-container {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dancing-cat {
+    width: 120px;
+    height: 144px;
+  }
+
+  .dancing-cat-container {
+    margin-bottom: 30px;
+  }
+}

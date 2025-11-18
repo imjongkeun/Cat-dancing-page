@@ -1,0 +1,174 @@
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  font-size: 1.8em;
+  color: #667eea;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+.play-button {
+  font-size: 1.2em;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  font-weight: 600;
+  min-width: 180px;
+}
+
+.play-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.play-button:active {
+  transform: translateY(-1px);
+}
+
+.play-button.playing {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+}
+
+.speed-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.speed-control label {
+  font-size: 1.1em;
+  color: #333;
+  font-weight: 600;
+}
+
+.speed-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.speed-button {
+  padding: 10px 20px;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+.speed-button:hover:not(:disabled) {
+  border-color: #667eea;
+  color: #667eea;
+  transform: translateY(-2px);
+}
+
+.speed-button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.speed-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.info {
+  background: #f0f4ff;
+  color: #333;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.95em;
+  line-height: 1.6;
+  border-left: 4px solid #667eea;
+}
+
+/* 반응형: 모바일 */
+@media (max-width: 768px) {
+  .controls-container {
+    padding: 20px 25px;
+    gap: 15px;
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
+
+  .play-button {
+    font-size: 1em;
+    padding: 12px 30px;
+    min-width: 140px;
+  }
+
+  .speed-buttons {
+    width: 100%;
+  }
+
+  .speed-button {
+    flex: 1;
+    min-width: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls-container {
+    padding: 15px 20px;
+    gap: 12px;
+    width: 95%;
+  }
+
+  .title {
+    font-size: 1.3em;
+  }
+
+  .play-button {
+    font-size: 0.95em;
+    padding: 10px 25px;
+    min-width: 120px;
+  }
+
+  .speed-control label {
+    font-size: 0.95em;
+  }
+
+  .speed-buttons {
+    gap: 8px;
+  }
+
+  .speed-button {
+    padding: 8px 15px;
+    font-size: 0.85em;
+  }
+
+  .info {
+    font-size: 0.85em;
+    padding: 12px 15px;
+  }
+}
